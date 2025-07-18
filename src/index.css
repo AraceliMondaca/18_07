@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes heart-bubble {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(-10px, -20px) scale(1.1);
+  }
+  50% {
+    transform: translate(10px, -40px) scale(0.95);
+  }
+  75% {
+    transform: translate(-5px, -60px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, -100px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-heart-bubble {
+  animation-name: heart-bubble;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  position: absolute;
+}
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+body{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient( #7c2affa2, #7297f4);
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-float-heart {
+  animation-name: float-heart;
+  animation-timing-function: ease-out;
+}
+#button {
+  margin-top: 15px;
+  border: 1px solid;
+  border-radius: 40px;
+  display: inline-flex; /* Asegúrate de que el botón use flexbox para centrar el contenido */
+  align-items: center;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  padding: 10px 20px; /* Añade un poco de padding */
+  color:#10004a; 
+   background-clip: text;
+  background-color:linear-gradient(#8f06ff, #24c5ff); /* Hace que el color del texto sea transparente */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background 0.3s ease; /* Añade una transición suave */
+}
+#button:hover {
+  border: 1px solid;
+  border-radius: 40px;
+  display: inline-flex; /* Asegúrate de que el botón use flexbox para centrar el contenido */
+  align-items: center;
+  justify-content: center;
+  background-color: linear-gradient( #bb3bea, #3b002a);
+  color:#af00ef;
+  transform: scale(1.05); /* Añade un efecto de escala al pasar el mouse */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background 0.3s ease; /* Añade una transición suave */
+}
+
+.pixelated-text {
+ font-family: 'Courier New', Courier, monospace; /* Fuente pixelada */
+  font-size: 18px; /* Ajusta el tamaño según sea necesario */
+  text-shadow: 1px 1px 0 rgb(45, 45, 45); /* Sombra para dar un efecto de profundidad */
+  line-height: 1.5; /* Espaciado entre líneas */
+  padding: 20px; /* Añade padding para el fondo */
+  border-radius: 10px; /* Opcional: redondea las esquinas */
+  background: linear-gradient(#895620d1,#5f3700a3); /* Fondo con gradiente */
+  box-shadow: 0 2px 4px rgb(0, 0, 0); /* Sombra sutil para dar profundidad */
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
